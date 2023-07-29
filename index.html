@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>S23</title>
   <style>
+    /* Comments are styled like this in CSS. */
     body {
       font-family: Arial, sans-serif;
       background-color: #222222;
@@ -19,6 +20,12 @@
       color: #333;
     }
 
+    /* The dot at the beginning is called an accessor. An accessor is a way to tell the webpage which attribute of a tag you want this particular
+      styling to apply to. An attribute in an HTML tag is additional metadata that describes its behaviour or its features, for example like this:
+      <div class="text"> div is just a generic tag used to categorize things <div>
+      in the example above, the class="text" is an attribute whose value is text.
+      The "dot" below (prefixed to text) indicates that this styling applies to the class attribute of any HTML tag/element.
+      The styling below applies to all tags (and all of its child tags unless specified differently in each one) that have class="text" as an attribute. */
     .text {
       color: #ffffff;
     }
@@ -38,17 +45,36 @@
   </style>
 </head>
 <body>
-  <h1>Embedded JavaScript and CSS Example</h1>
-  <p class="text">This is a simple webpage with embedded JavaScript and CSS styles.</p>
+  <!-- Comments are styled like this in HTML -->
+  <h1>S23 Project</h1>
+  <p class="text">Enter your damage values.</p>
 
-  <button class="button" onclick="changeText()">Click Me</button>
-  <p id="output" class="text">Click the button to see the magic happen!</p>
+  <!-- Input for the base damage. Includes the label and the actual textbox -->
+  <p class="text">
+    <label>Base DMG:</label>
+    <input type="text" id="baseDamage" placeholder="0"/> <br>
+  </p>
+
+  <!-- Input for the multiplier. Includes the label and the actual textbox -->
+  <p class="text">
+    <label>Multiplier:</label>
+    <input type="text" id="damageMultiplier" placeholder="0"/><br>
+  </p>
+
+  <!-- Button that uses an onclick event to call a javascript function -->
+  <button class="button" onclick="calculateDamage()">Calculate damage</button>
+  <p id="result" class="text">Damage is 0</p>
 
   <script>
-    function changeText() {
-      var outputElement = document.getElementById("output");
-      outputElement.innerHTML = "Hello, you just clicked the button!";
-      outputElement.style.color = "#ff4500";
+    function calculateDamage() {
+      // Accessing elements on the HTML page using document.
+      var baseDamageValue = document.getElementById("baseDamage").value;
+      var damageMultiplierValue = document.getElementById("damageMultiplier").value;
+      var resultElement = document.getElementById("result");
+
+      // Calculate damage values.
+      var damage = baseDamageValue * damageMultiplierValue;
+      resultElement.innerHTML = "Damage is " + damage;
     }
   </script>
 </body>
