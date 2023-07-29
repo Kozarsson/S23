@@ -1,9 +1,51 @@
-<html>
-    <script>
-            
-    </script>
-    <body>
-        <h1>Hello world!</h1>
-        <a href="https://www.google.com"><button>Take me to Google</button></a>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embedded JavaScript and CSS Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+
+    h1 {
+      color: #007bff;
+    }
+
+    p {
+      color: #333;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Embedded JavaScript and CSS Example</h1>
+  <p>This is a simple webpage with embedded JavaScript and CSS styles.</p>
+
+  <button class="button" onclick="changeText()">Click Me</button>
+  <p id="output">Click the button to see the magic happen!</p>
+
+  <script>
+    function changeText() {
+      var outputElement = document.getElementById("output");
+      outputElement.innerHTML = "Hello, you just clicked the button!";
+      outputElement.style.color = "#ff4500";
+    }
+  </script>
+</body>
 </html>
