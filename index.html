@@ -4,18 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>S23</title>
+
+  <!-- This section is dedicated to CSS. -->
   <style>
-    /* Comments are styled like this in CSS. */
+    /* Comments are styled like this in CSS. CSS is a style sheet 'language' that allows you to apply style to your HTML (written below this <style> section
+       inside of the <body> tag). */
     body {
       font-family: Arial, sans-serif;
       background-color: #222222;
       text-align: center;
     }
 
+    /* This styling applies to anything between the <h1> and </h1> tags in the webpage. */
     h1 {
       color: #007bff;
     }
 
+    /* This styling applies to anything between the <p> and </p> tags in the webpage. */
     p {
       color: #333;
     }
@@ -30,6 +35,7 @@
       color: #ffffff;
     }
 
+    /* Same as above. */
     .button {
       display: inline-block;
       padding: 10px 20px;
@@ -39,11 +45,15 @@
       border-radius: 5px;
     }
 
+    /* I think you can kinda tell what the :hover thingy does here. You can also define the :active decorator on a button to
+       make its color change when you press the button. */
     .button:hover {
       background-color: #0056b3;
     }
   </style>
 </head>
+
+<!-- This section is the main content of the webpage. -->
 <body>
   <!-- Comments are styled like this in HTML -->
   <h1>S23 Project</h1>
@@ -65,9 +75,10 @@
   <button class="button" onclick="calculateDamage()">Calculate damage</button>
   <p id="result" class="text">Damage is 0</p>
 
+  <!-- This section is dedicated to javascript that does things to the <body> of the webpage. -->
   <script>
     function calculateDamage() {
-      // Accessing elements on the HTML page using document.
+      // Accessing elements on the HTML page using document.elementXXX.
       var baseDamageValue = document.getElementById("baseDamage").value;
       var damageMultiplierValue = document.getElementById("damageMultiplier").value;
       var resultElement = document.getElementById("result");
